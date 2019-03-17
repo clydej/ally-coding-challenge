@@ -1,0 +1,46 @@
+// File Name: _header.scss
+// Description: global header styles
+// Used by: styles.scss
+// Dependencies:
+// ------------------------------------------------------------
+
+.header {
+  background-color: $blue;
+
+  &-inner {
+    text-align: center;
+    padding-top: 6px;
+
+    @include min-breakpoint($tablet) {
+      padding-bottom: 6px;
+    }
+  }
+
+  .logo-wrap {
+    @include breakpoint($tablet-1) {
+      margin-bottom: 6px;
+    }
+  }
+    .logo {
+      &-img {
+
+      }
+    }
+
+  .main-nav-wrap {
+
+  }
+    .main-nav {
+      li {
+        a {
+          color: white;
+        }
+
+        &.active {
+          a {
+            background-color: $blue-dark;
+          }
+        }
+      }
+    }
+}

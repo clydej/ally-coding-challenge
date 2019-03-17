@@ -1,0 +1,30 @@
+// File Name: _footer.scss
+// Description: global footer styles
+// Used by: styles.scss
+// Dependencies:
+// ------------------------------------------------------------
+
+.footer {
+  &-inner {
+
+  }
+    .copyright {
+      a {
+
+      }
+    }
+    &-nav-wrap {
+      .footer-nav {
+        li {
+          a {
+
+          }
+          &.active {
+            a {
+              
+            }
+          }
+        }
+      }
+    }
+}

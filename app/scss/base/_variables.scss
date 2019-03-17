@@ -1,25 +1,38 @@
 // ----------------------------------------------------------------------
-  // Base
+	// Layout Breakpoints
 // ----------------------------------------------------------------------
-@import "base/mixins";
-@import "base/variables";
-@import "base/extends";
-@import "base/reset";
-@import "base/fonts";
+$tablet-1: 767;
+$tablet: 768;
+$desktop-1: 1023;
+$desktop: 1024;
+$desktop-large-1: 1279;
+$desktop-large: 1280;
+$desktop-xlarge-1: 1439;
+$desktop-xlarge: 1440;
+$desktop-hd-1: 1919;
+$desktop-hd: 1920;
+
 
 // ----------------------------------------------------------------------
-  // Layout
+	// Font Sizes
 // ----------------------------------------------------------------------
-@import "layout/containers";
+$regularSize: 14;
+
 
 // ----------------------------------------------------------------------
-  // Modules
+	// Font Families
 // ----------------------------------------------------------------------
-@import "modules/header";
-@import "modules/footer";
-@import "modules/elements";
+$helvetica: Helvetica,Arial,sans-serif;
+
 
 // ----------------------------------------------------------------------
-	// Views
+	// Colors
 // ----------------------------------------------------------------------
-@import "views/company";
+$purple: #650360;
+$blue: #328fc2;
+$blue-dark: #006899;
+$gray-light: #f5f5f5;
+$gray-dark: #505050;
+$green: #bbd8c4;
+$green-lighter: #ddebe1;
+$green-lightest: #eef5f0;

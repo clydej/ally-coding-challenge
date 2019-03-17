@@ -1,0 +1,27 @@
+// File Name: _blue.scss
+// Description: adds blue theme colors to modules
+// Used by: styles.scss
+// Dependencies:
+// ------------------------------------------------------------
+
+.content {
+  &-inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
+
+.main {
+  .banner {
+    h1 {
+
+    }
+    p {
+      line-height: 18px;
+    }
+  }
+}
+.sidebar {
+
+}
