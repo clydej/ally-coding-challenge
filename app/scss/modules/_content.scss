@@ -1,0 +1,32 @@
+.content {
+  &-inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include min-breakpoint($tablet) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include min-breakpoint($desktop) {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+  }
+
+}
+
+.main {
+  @include min-breakpoint($tablet) {
+    flex-basis: calc(100% - 220px - 20px);
+  }
+}
+
+
+.sidebar {
+  @include min-breakpoint($tablet) {
+    flex-basis: 220px;
+  }
+}

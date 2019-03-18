@@ -1,52 +1,323 @@
+* {
+  box-sizing: border-box;
+}
+
 // Links
 a {
   color: $blue;
+  text-decoration: none;
 }
 
-// Navigation
-.nav-wrap {
-  .nav {
-    display: flex;
-    justify-content: center;
+// Headings
+h1, h2, h3 {
+  font-weight: 300;
+  line-height: 0.666666667em;
+
+  strong {
+    font-weight: 500;
+  }
+}
+h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.125em;
+  margin-bottom: .9em;
+}
+h1 {
+  color: $purple;
+  @include rem("font-size", 28);
+  margin-bottom: .9em;
+
+  @include min-breakpoint($desktop) {
+    @include rem("font-size", 36);
+  }
+}
+h2 {
+  @include rem("font-size", 20);
+
+  @include min-breakpoint($desktop) {
+    @include rem("font-size", 28);
+  }
+}
+h3 {
+  @include rem("font-size", 18);
+
+  @include min-breakpoint($desktop) {
+    @include rem("font-size", 26);
+  }
+}
+h4 {
+  @include rem("font-size", 16);
+}
+h5 {
+  @include rem("font-size", 15);
+}
+h6 {
+  @include rem("font-size", 14);
+}
+
+// Paragraphs and lists
+p {
+  line-height: 21px;
+  margin-bottom: 21px;
+}
+
+ul {
+  margin-bottom: 30px;
+
+  li {
+    position: relative;
+    padding-left: 13px;
+    margin-bottom: 7px;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+// Pipe separator
+.pipe {
+
+}
+
+// Banner
+.banner {
+  h1 {
+
+  }
+
+  p {
+    line-height: 18px;
+  }
+
+  h4 {
+
+  }
+
+  ul {
+    li {
+
+    }
+  }
+}
+
+// Message box
+.message-box {
+  padding: 15px;
+  background-color: $green;
+  margin-bottom: 30px;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $purple;
+    margin-bottom: .5em;
+  }
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
+      @include min-breakpoint($tablet) {
+
+      }
+    }
+  }
+  img {
+    &.mobile-graphic {
+      right: 15px;
+      bottom: 15px;
+      position: absolute;
+
+      @include breakpoint($tablet-1) {
+        width: 70px;
+        height: auto;
+      }
+
+      @include min-breakpoint($tablet) {
+        right: 30px;
+      }
+    }
+  }
+
+  &.mobile-info {
+    padding-right: 100px;
+    position: relative;
+    margin-bottom: 40px;
 
     @include min-breakpoint($tablet) {
-      justify-content: flex-start;
+      padding-right: 150px;
     }
 
-    li {
-      padding-left: 0;
+    @include min-breakpoint($desktop) {
+      margin-bottom: 50px;
+    }
+  }
+}
 
-      &::before {
-        display: none;
-      }
+// Rates
+.rates {
+  h2 {
 
-      a {
-        font-size: 12px;
-        text-decoration: none;
-        text-transform: lowercase;
-        padding: 0 8px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  }
+}
 
-        @include min-breakpoint($tablet) {
-          font-size: 16px;
-          padding: 0 20px;
-          height: 45px;
-        }
+// Table
+.table-wrap {
+  margin-bottom: 15px;
+  margin-top: 30px;
+
+  * {
+    // box-sizing: content-box;
+  }
+  .table {
+    width: 100%;
+    border-spacing: 0;
+
+    * {
+      // box-sizing: content-box;
+    }
+
+    th, td {
+      text-align: right;
+      min-width: 135px;
+
+      &.no-heading {
+        text-align: left;
       }
-      &.active {
-        a {
-          font-weight: 700;
-        }
-      }
+    }
+    td {
+      @include rem("font-size", 16);
+    }
+    th {
+
+    }
+    thead tr th, tfoot tr td {
+      font-weight: 300;
+      @include rem("font-size", 12);
+      padding: 9px 20px;
 
       &:last-of-type {
-        a {
-          padding-right: 0;
+        padding-right: 0;
+      }
+    }
+    thead {
+      tr {
+        th {
+
         }
       }
     }
+    tbody {
+      tr {
+        td {
+          padding: 11px 20px;
+        }
+
+        &:nth-of-type(odd) {
+          background-color: $green-lightest;
+        }
+        &:nth-of-type(even) {
+          background-color: $green-lighter;
+        }
+
+        &.focus {
+          td {
+            @include rem("font-size", 18);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    tfoot {
+      tr {
+        td {
+
+        }
+      }
+    }
+  }
+}
+
+// Callout
+.callout {
+  margin-bottom: 25px;
+
+  .btn {
+
+  }
+}
+
+// Tabber
+.tabber {
+  &-tab {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: $green-lighter;
+    @include rem("font-size", 18);
+    margin-right: -3px;
+    position: relative;
+    border-top: 1px solid $gray-darker;
+    border-right: 1px solid $gray-darker;
+    z-index: 0;
+    margin-bottom: -1px;
+
+    &.active {
+      background-color: $gray-light;
+      padding-top: 18px;
+      color: $gray-dark;
+      z-index: 2;
+
+      &::after {
+        content: "";
+        position: absolute;
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+        border-bottom: 1px solid $gray-light;
+        top: 0;
+        right: 0;
+        bottom: -1px;
+        left: 0;
+      }
+    }
+  }
+  &-content {
+    background-color: $gray-light;
+    border-top: 1px solid $gray-darker;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      border-top: 1px solid white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &-inner {
+      padding: 15px;
+      position: relative;
+      z-index: 1;
+    }
+      &-row {
+        margin-bottom: 20px;
+
+        > * {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        h4 {
+          margin-bottom: 6px;
+
+          a {
+
+          }
+        }
+        p {
+
+        }
+      }
   }
 }

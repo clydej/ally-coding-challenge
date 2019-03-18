@@ -1,0 +1,66 @@
+.nav-wrap {
+  .nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+
+    @include breakpoint($tablet-1) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 405px;
+    }
+
+    @include min-breakpoint($tablet) {
+      justify-content: flex-start;
+    }
+
+    li {
+      padding-left: 0;
+      margin-bottom: 0;
+
+      @include breakpoint($tablet-1) {
+        flex-grow: 1;
+      }
+
+      &::before {
+        display: none;
+      }
+
+      a {
+        font-size: 12px;
+        text-decoration: none;
+        text-transform: lowercase;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+        @include breakpoint($tablet-1) {
+          width: 100%;
+          padding: 0;
+        }
+
+        @include min-breakpoint($tablet) {
+          font-size: 16px;
+          padding: 0 20px;
+          height: 45px;
+        }
+      }
+      &.active {
+        a {
+          font-weight: 700;
+        }
+      }
+
+      &:last-of-type {
+        a {
+          @include min-breakpoint($tablet) {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

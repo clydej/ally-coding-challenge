@@ -1,7 +1,7 @@
 .container {
   padding-left: 10px;
   padding-right: 10px;
-  max-width: 940px;
+  max-width: calc(940px + 10px + 10px);
   @include margin-auto;
 
   &-fluid {

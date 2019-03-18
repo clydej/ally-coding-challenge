@@ -5,23 +5,49 @@
 // ------------------------------------------------------------
 
 .footer {
+  background-color: $gray;
+
   &-inner {
+    height: 100px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($tablet-1) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include min-breakpoint($tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
   }
     .copyright {
+      @include breakpoint($tablet-1) {
+        margin-bottom: 10px;
+      }
+
       a {
 
       }
     }
     &-nav-wrap {
+
+      @include breakpoint($tablet-1) {
+        width: 100%;
+      }
+
       .footer-nav {
         li {
           a {
-
+            &:hover {
+              color: darken($blue-dark, 5%);
+            }
           }
           &.active {
             a {
-              
+              color: $blue;
             }
           }
         }

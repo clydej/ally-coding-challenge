@@ -9,21 +9,24 @@
 
   &-inner {
     text-align: center;
-    padding-top: 6px;
+    padding-top: 15px;
 
     @include min-breakpoint($tablet) {
-      padding-bottom: 6px;
+      padding-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
   .logo-wrap {
     @include breakpoint($tablet-1) {
-      margin-bottom: 6px;
+      margin-bottom: 15px;
     }
   }
     .logo {
       &-img {
-
+        display: inline-block;
       }
     }
 
@@ -34,6 +37,10 @@
       li {
         a {
           color: white;
+
+          &:hover {
+            background-color: darken($blue-dark, 5%);
+          }
         }
 
         &.active {
