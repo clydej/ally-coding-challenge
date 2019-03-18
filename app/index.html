@@ -69,7 +69,7 @@
             <h2>Rates <span class="pipe">|</span> <strong>Check them out.</strong></h2>
 
             <div class="table-wrap">
-              <table class="table">
+              <table class="table" id="rate-table">
               	<thead>
               		<tr>
               			<th class="no-heading"></th>
@@ -78,31 +78,7 @@
               		</tr>
               	</thead>
               	<tbody>
-              		<tr class="focus">
-              			<td class="no-heading">URBank</td>
-              			<td>0.87 %</td>
-              			<td>$436.89</td>
-              		</tr>
-              		<tr>
-              			<td class="no-heading">Big Guy Financial</td>
-              			<td>0.75 %</td>
-              			<td>$376.41</td>
-              		</tr>
-              		<tr>
-                    <td class="no-heading">Dewey, Cheatam & Howe</td>
-              			<td>0.01 %</td>
-              			<td>$5.00</td>
-              		</tr>
-              		<tr>
-                    <td class="no-heading">First Onion</td>
-              			<td>0.01 %</td>
-              			<td>$5.00</td>
-              		</tr>
-              		<tr>
-                    <td class="no-heading">Bank of Everywhere</td>
-              			<td>0.01 %</td>
-              			<td>$5.00</td>
-              		</tr>
+              		<!-- Load rates via JSON -->
               	</tbody>
                 <tfoot>
                   <tr>
@@ -113,6 +89,8 @@
                 </tfoot>
               </table>
             </div>
+
+
           </div>
         </section>
 
@@ -122,9 +100,9 @@
           </div>
 
           <div class="tabber">
-            <a href="#" data-tab-trigger="1" class="tabber-tab active">News</a>
-            <a href="#" data-tab-trigger="2" class="tabber-tab">Archive</a>
-            <div data-tab class="tabber-content">
+            <a href="#" data-tab="1" class="tabber-tab active">News</a>
+            <a href="#" data-tab="2" class="tabber-tab">Archive</a>
+            <div id="tab-1" class="tabber-content news active">
               <div class="tabber-content-inner">
                 <div class="tabber-content-row">
                   <h4><a href="#">Lorem ipsum dolor</a></h4>
@@ -140,7 +118,7 @@
                 </div>
               </div>
             </div>
-            <div data-tab class="tabber-content">
+            <div id="tab-2" class="tabber-content archive">
               <div class="tabber-content-inner">
                 <div class="tabber-content-row">
                   <h4><a href="#">Lorem ipsum dolor</a></h4>
@@ -178,6 +156,11 @@
       </div>
     </div>
   </footer>
+
+  
+
+  <!-- Load jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!--build:js js/main.min.js -->
   <script src="js/main.js"></script>

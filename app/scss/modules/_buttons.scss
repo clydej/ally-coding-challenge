@@ -19,6 +19,7 @@
 
   &:hover {
     background-color: darken($purple, 10%);
+    color: white;
   }
   &:disabled, &[disabled] {
     opacity: 0.3;

@@ -6,6 +6,11 @@
 a {
   color: $blue;
   text-decoration: none;
+  transition: color .3s ease-in-out;
+
+  &:hover {
+    color: $blue-darker;
+  }
 }
 
 // Headings
@@ -14,7 +19,7 @@ h1, h2, h3 {
   line-height: 0.666666667em;
 
   strong {
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 h4, h5, h6 {
@@ -99,6 +104,21 @@ ul {
   ul {
     li {
 
+    }
+  }
+
+  > * {
+    a {
+      display: inline-block;
+      padding-bottom: 0;
+      margin-bottom: -1px;
+      border-bottom: 1px solid $blue;
+      transition: color .3s ease-in-out, border-color .3s ease-in-out;
+
+      &:hover {
+        color: $blue-darker;
+        border-color: $blue-darker;
+      }
     }
   }
 }
@@ -219,7 +239,7 @@ ul {
           background-color: $green-lighter;
         }
 
-        &.focus {
+        &.focus, &:first-of-type {
           td {
             @include rem("font-size", 18);
             font-weight: 700;
@@ -253,12 +273,24 @@ ul {
     padding: 8px 16px;
     background-color: $green-lighter;
     @include rem("font-size", 18);
-    margin-right: -3px;
+    margin-right: -4px;
     position: relative;
     border-top: 1px solid $gray-darker;
     border-right: 1px solid $gray-darker;
     z-index: 0;
     margin-bottom: -1px;
+
+    &:not(.active) {
+      transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+      &:hover {
+        color: $gray-dark;
+        background-color: $green;
+        border-top-color: darken($green, 20%);
+        border-right-color: darken($green, 20%);
+      }
+
+    }
 
     &.active {
       background-color: $gray-light;
@@ -278,12 +310,28 @@ ul {
         left: 0;
       }
     }
+
+    &:not(:first-of-type) {
+      &.active {
+        border-left: 1px solid $gray-darker;
+        margin-left: -1px;
+
+        &::after {
+          border-left: 1px solid white;
+        }
+      }
+    }
   }
   &-content {
     background-color: $gray-light;
     border-top: 1px solid $gray-darker;
     position: relative;
     z-index: 1;
+    display: none;
+
+    &.active {
+      display: block;
+    }
 
     &::after {
       content: "";
@@ -296,12 +344,16 @@ ul {
     }
 
     &-inner {
-      padding: 15px;
+      padding: 27px 15px;
       position: relative;
       z-index: 1;
     }
       &-row {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
 
         > * {
           &:last-child {
@@ -319,5 +371,15 @@ ul {
 
         }
       }
+
+    &.archive {
+      .tabber-content-row {
+        margin-bottom: 20px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }

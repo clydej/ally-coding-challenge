@@ -34,12 +34,16 @@
 
   }
     .main-nav {
+      @include min-breakpoint($tablet) {
+        margin-right: -20px;
+      }
+
       li {
         a {
           color: white;
 
           &:hover {
-            background-color: darken($blue-dark, 5%);
+            background-color: $blue-darker;
           }
         }
 

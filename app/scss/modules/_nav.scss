@@ -57,7 +57,7 @@
       &:last-of-type {
         a {
           @include min-breakpoint($tablet) {
-            padding-right: 0;
+            // padding-right: 0;
           }
         }
       }
