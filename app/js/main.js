@@ -19,7 +19,8 @@ $(document).ready(function(){
     });
 
   // Tabs
-  $('.tabber-tab').click(function(){
+  $('.tabber-tab').click(function(e){
+    e.preventDefault();
     var tab_id = $(this).attr('data-tab');
 
     $('.tabber-tab').removeClass('active');
@@ -28,5 +29,21 @@ $(document).ready(function(){
     $(this).addClass('active');
     $("#tab-" + tab_id).addClass('active');
   });
+
+  // Modal toggle
+  $(".modal-toggle").click(function(e){
+    e.preventDefault();
+    var target = $(this).data("target");
+    $("body").toggleClass("show-modal");
+    $(".modal#" + target).toggleClass("show");
+  });
+
+  // Modal close
+  $(".modal-close").click(function(e){
+    e.preventDefault();
+    $("body").removeClass("show-modal");
+    $(this).closest(".modal").removeClass("show");
+  });
+
 
 });

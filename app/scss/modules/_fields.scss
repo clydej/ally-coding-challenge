@@ -1,0 +1,73 @@
+label {
+  font-weight: 700;
+  @include rem("font-size", 14);
+}
+
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="url"],
+  &[type="password"],
+  &[type="search"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="range"],
+  &[type="date"],
+  &[type="month"],
+  &[type="week"],
+  &[type="time"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="color"] {
+    height: 35px;
+    border-radius: 0;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid $blue;
+    line-height: 24px;
+    font-size: 16px;
+    padding: 8px 12px;
+    width: 100%;
+    appearance: none;
+
+    &:hover {
+      border-color: $blue-dark;
+    }
+
+    &:focus {
+      border-color: $blue-darker;
+    }
+  }
+}
+
+.form {
+  &-row {
+    &.input {
+      margin-bottom: 20px;
+
+      @include min-breakpoint($tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      label {
+        @include min-breakpoint($tablet) {
+          display: inline-block;
+          text-align: right;
+          flex-basis: 70px;
+        }
+      }
+      input {
+        @include min-breakpoint($tablet) {
+          flex-basis: calc(100% - 70px - 20px;);
+        }
+      }
+    }
+    &.submit {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
